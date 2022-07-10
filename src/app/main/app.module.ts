@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule,  NbSidebarModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { InterceptorService } from '../core/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     NbButtonModule,
     NbMenuModule.forRoot(),
     HttpClientModule,
+    DashboardModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({
@@ -33,7 +36,11 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
       forms: {},
     })
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+   }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
