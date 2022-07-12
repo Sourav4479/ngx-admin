@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>
+      HSN List &nbsp;&nbsp;&nbsp; <button (click)="getHSNList(true)" nbButton status="primary" outline size="tiny"><i class="nb-loop"></i>&nbsp;  Refresh</button> 
+    </nb-card-header>
+  
+    <nb-card-body>
+      <ng2-smart-table 
+        [settings]="tableSetting" 
+        [source]="data" 
+        (delete)="onDeleteConfirm($event)" 
+        (editConfirm)="onEdit($event)" 
+        (createConfirm)="onCreate($event)">
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+
+ 

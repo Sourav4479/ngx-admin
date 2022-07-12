@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FOOTER_MENU_ITEMS, MENU_ITEMS } from 'src/app/core/constants/menu.items';
+
+
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  template: `
+    <app-dasboard-layout>
+      <nb-menu [items]="menu"></nb-menu>
+      <router-outlet></router-outlet>
+    </app-dasboard-layout>
+  `
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
+  
+  menu= MENU_ITEMS;
+  footerMenu = FOOTER_MENU_ITEMS
+  constructor() {
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
-
 }

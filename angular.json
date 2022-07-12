@@ -23,12 +23,37 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies":[
+              "axios",
+              "ulid",
+              "buffer",
+              "fast-xml-parser",
+              "@aws-crypto/sha256-js",
+              "camelcase-keys",
+              "lodash/isEqual",
+              "lodash/isEmpty",
+              "crypto-js/hmac-sha256",
+              "crypto-js/lib-typedarrays",
+              "js-cookie",
+              "zen-push",
+              "crypto-js/core",
+              "zen-observable",
+              "lodash/get",
+              "isomorphic-unfetch",
+              "@aws-crypto/crc32",
+              "uuid",
+              "@aws-crypto/sha256-browser",
+              "fast-xml-parser"
+            ],
             "assets": [
+              "src/_redirects",
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/nebular-icons/scss/nebular-icons.scss"
             ],
             "scripts": []
           },

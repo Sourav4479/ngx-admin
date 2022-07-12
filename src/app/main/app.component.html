@@ -1,11 +1,6 @@
-    <!-- <nb-layout>
-      <nb-layout-header fixed>Company Name</nb-layout-header>
 
-      <nb-sidebar><nb-menu [items]="items"></nb-menu></nb-sidebar>
+<div *ngIf="!isLoading"><router-outlet></router-outlet></div>
 
-      <nb-layout-column>
-        Page Content <button nbButton>Hello World</button>
-      </nb-layout-column>
-    </nb-layout> -->
-<router-outlet></router-outlet>
-    
+<div *ngIf="isLoading" id="nb-global-spinner" class="spinner">
+<h1>Loading...</h1>
+</div>
