@@ -30,6 +30,7 @@ export class AuthService {
             userGroup: jwtData['cognito:groups'][0]
         }
         setUserDataToLocalStorage(userData)
+        console.log(userData,'Sourav')
         subscriber.next(userData);
         subscriber.complete();
       }, error => {

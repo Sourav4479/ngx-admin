@@ -1,0 +1,23 @@
+:host {
+    display: block;
+  }
+  .uploader-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .ngx-checkmark-wrapper .ng-star-inserted{
+      display:none !important;
+  }
+  .card {
+    background-color: #f7f9fc;
+    padding: 16px;
+  }
+  .myel {
+    margin-left: 149px;
+}

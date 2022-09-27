@@ -7,8 +7,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HSNComponent } from './hsn/hsn.component';
 import { HomeComponent } from './home/home.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { ProductComponent } from './product/product.component';
-import { ProductModule } from './product/product.module';
+
 
 
 export const routes: Routes = [
@@ -17,7 +16,7 @@ export const routes: Routes = [
     children: [
       {path: 'home',component: HomeComponent},
       {path: 'hsn',component: HSNComponent, loadChildren: () => import('./hsn/hsn.module').then(m => m.HSNModule)},
-      {path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},
+      {path: 'product', loadChildren: () => import('./schools/schools.module').then(m => m.SchoolsModule)},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: '**', redirectTo: 'home' },
     ]

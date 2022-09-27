@@ -22,62 +22,66 @@ export const MENU_ITEMS: NbMenuItem[] = [
       link: '/dashboard/hsn',
     },
     {
-      title: 'Products',
+      title: 'Schools',
       icon: 'keypad-outline',
       link: '/dashboard/product/',
       children: [
         {
-          title: 'Product List',
+          title: 'View Schools',
           link: '/dashboard/product/list',
         },
         {
-          title: 'Add Product',
+          title: 'Add Schools',
           link: '/dashboard/product/create',
         },
       ],
     },
+    // {
+    //   title: 'Stock Entry',
+    //   icon: 'monitor-outline',
+    // },
+    // {
+    //   title: 'Vendor Management',
+    //   icon: 'car-outline',
+    // },
+    // {
+    //   title: 'Orders',
+    //   icon: 'cube-outline',
+    // },
+    // {
+    //   title: 'Website Management',
+    //   icon: 'tv-outline',
+    // },
+    // {
+    //   title: 'Admin',
+    //   icon: 'lock-outline',
+    //   children: [
+    //     {
+    //       title: 'Users List',
+    //       link: '/pages/layout/stepper',
+    //     },
+    //     {
+    //       title: 'Staff List',
+    //       link: '/pages/layout/list',
+    //     },
+    //     {
+    //       title: 'Groups',
+    //       link: '/pages/layout/infinite-list',
+    //     },
+    //     {
+    //       title: 'Add Staff',
+    //       link: '/pages/layout/accordion',
+    //     },
+    //     // {
+    //     //   title: 'Tabs',
+    //     //   pathMatch: 'prefix',
+    //     //   link: '/pages/layout/tabs',
+    //     // },
+    //   ],
+    // },
     {
-      title: 'Stock Entry',
-      icon: 'monitor-outline',
-    },
-    {
-      title: 'Vendor Management',
-      icon: 'car-outline',
-    },
-    {
-      title: 'Orders',
-      icon: 'cube-outline',
-    },
-    {
-      title: 'Website Management',
-      icon: 'tv-outline',
-    },
-    {
-      title: 'Admin',
-      icon: 'lock-outline',
-      children: [
-        {
-          title: 'Users List',
-          link: '/pages/layout/stepper',
-        },
-        {
-          title: 'Staff List',
-          link: '/pages/layout/list',
-        },
-        {
-          title: 'Groups',
-          link: '/pages/layout/infinite-list',
-        },
-        {
-          title: 'Add Staff',
-          link: '/pages/layout/accordion',
-        },
-        // {
-        //   title: 'Tabs',
-        //   pathMatch: 'prefix',
-        //   link: '/pages/layout/tabs',
-        // },
-      ],
+      title: 'Logout',
+      icon: 'log-out-outline',
     },
   ];
 export const FOOTER_MENU_ITEMS: NbMenuItem[] =[

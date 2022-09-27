@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card>
+          <nb-card-header>Add a new school</nb-card-header>
+          <nb-card-body>
+            <form [formGroup]="schoolCreateForm" (ngSubmit)="onSubmit()">
+              <div class="form-group row mb-5">
+                <label for="inputName" class="label col-sm-2 col-form-label">School Short Name</label>
+                <div class="col-sm-10">
+                  
+                  <input type="text" nbInput formControlName = "username" fullWidth id="inputUserName" placeholder="Enter school short unique name">
+                  <p class="text-danger" >** Username Not Available</p>
+                </div>
+              </div>
+              <div class="form-group row mb-5">
+                <label for="inputName" class="label col-sm-2 col-form-label">School Name</label>
+                <div class="col-sm-10">
+                  <input type="text" nbInput formControlName = "name" fullWidth id="inputName" placeholder="Enter full name of the school">
+                </div>
+              </div>
+              <div class="form-group row mb-5">
+                <label for="inputLogo" class="label col-sm-2 col-form-label">School Logo</label>
+                <div class="col-sm-10">
+                  <input type="file" nbInput formControlName = "schoolLogo" accept="image/png, image/gif, image/jpeg"  fullWidth id="inputLogo">
+                </div>
+              </div>
+              <div class="form-group row mb-5" >
+                <label for="inputAddress" class="label col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                   <textarea nbInput formControlName = "address"  fullWidth rows="4" cols="50" name="address" placeholder="School Address" form="usrform"></textarea>
+                </div>
+              </div>
+              <div class="form-group row mb-5">
+                <label for="inputContactNumber" class="label col-sm-2 col-form-label">School Contact Number</label>
+                <div class="col-sm-10">
+                  <input type="text" nbInput formControlName = "contactNumber" fullWidth id="inputContactNumber" placeholder="Enter a contact number of school">
+                </div>
+              </div>
+              <div class="form-group row mb-5">
+                <label for="inputEmail" class="label col-sm-2 col-form-label">School Email</label>
+                <div class="col-sm-10">
+                  <input type="text" nbInput formControlName = "email" fullWidth id="inputEmail" placeholder="Enter school email address">
+                </div>
+              </div>
+              <div class="row mb-5">
+                <label class="label col-sm-12">Management Details</label>
+               <span class="myel">
+                <div  class="col-12 row m-3 ml-5" formArrayName="managementDetails" *ngFor="let creds of formarrayManagement.controls; let i = index" >
+                  <ng-container [formGroupName]="i">
+                    <input class="col-sm-3" nbInput type="text" placeholder="Full Name" formControlName="name"> &nbsp;&nbsp;
+                    <input class="col-sm-3" nbInput placeholder="Phone" formControlName="phone"> &nbsp;&nbsp;
+                    <input class="col-sm-3" nbInput placeholder="Email Id" formControlName="email">
+                  </ng-container>
+                  &nbsp;&nbsp;
+                  <button [disabled]="i==0? true : false" nbButton size="medium" (click)="onRemoveRow(i,'management')"> <nb-icon icon="minus-outline"></nb-icon></button>
+                </div>
+                <div class="col-md-6 offset-md-3">
+                  <button type="submit" fullWidth nbButton size="small"status="default" (click)="onFormArrayAddNewRow($event,'management')">Add a New Member<nb-icon icon="plus-square-outline"></nb-icon></button>
+                </div>
+               </span>
+              </div>
+              <div class="row mb-5">
+                <label class="label col-sm-12">Admin Details</label>
+                <div class="myel">
+                  <div class="col-12 row m-3 ml-5" formArrayName="adminDetails" *ngFor="let creds of formarrayAdmin.controls; let i = index">
+                    <ng-container [formGroupName]="i" >
+                      <input class="col-sm-3 " nbInput placeholder="Full Name" formControlName="name"> &nbsp;&nbsp; 
+                      <input class="col-sm-3" nbInput placeholder="Phone" formControlName="phone">&nbsp;&nbsp;
+                      <input class="col-sm-3" nbInput placeholder="Email Id" formControlName="email">
+                    </ng-container>
+                    &nbsp;&nbsp;
+                   <button [disabled]="i==0? true : false" nbButton size="medium" (click)="onRemoveRow(i,'admin')"> <nb-icon icon="minus-outline"></nb-icon></button>
+                  </div>
+                  <div class="col-md-6 offset-md-3">
+                    <button type="submit" fullWidth nbButton size="small"status="default" (click)="onFormArrayAddNewRow($event,'admin')">Add a new Admins<nb-icon icon="plus-square-outline"></nb-icon></button>
+                  </div>
+                </div>
+              </div>
+           
+              <!-- <div class="form-group row">
+                <label for="inputNOT" class="label col-sm-3 col-form-label">Number of Teachers</label>
+                <div class="col-sm-9">
+                  <input type="text" nbInput formControlName = "not" fullWidth id="inputNOT" placeholder="Estimated number of teachers">
+                </div>
+              </div> -->
+
+            
+              <!-- <div class="form-group row">
+                <label class="col-sm-3 label">Radios</label>
+                <div class="col-sm-9">
+                  <nb-radio-group>
+                    <nb-radio>Option 1</nb-radio>
+                    <nb-radio>Option 2</nb-radio>
+                    <nb-radio disabled>Disabled Option</nb-radio>
+                  </nb-radio-group>
+                </div>
+              </div> -->
+              <div class="form-group row mt-3">
+                <div class="col-12">
+                  <button type="submit" nbButton fullWidth status="primary">Create School <nb-icon icon="plus-circle-outline"></nb-icon></button>
+                </div>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+</div>

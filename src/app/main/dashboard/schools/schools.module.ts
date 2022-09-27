@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCreateComponent } from './product-create/product-create.component';
-import { ProductComponent } from './product.component';
+import { SchoolsCreateComponent } from './schools-create/schools-create.component';
+import {  SchoolsComponent } from './schools.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbIconModule, NbInputModule, NbRadioModule, NbSelectModule, NbUserModule } from '@nebular/theme';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FilePickerModule } from 'ngx-awesome-uploader';
 
 
 export const routes: Routes = [
   {
     path:'',children:[
-      {path:'list',component:ProductComponent},
-      {path:'create',component:ProductCreateComponent},
+      {path:'list',component:SchoolsComponent},
+      {path:'create',component:SchoolsCreateComponent},
       { path: '', redirectTo: 'list', pathMatch: 'full'},
       { path: '**', redirectTo: 'list' },
     ]
@@ -19,8 +21,8 @@ export const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProductCreateComponent,
-    ProductComponent
+    SchoolsCreateComponent,
+    SchoolsComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,9 @@ export const routes: Routes = [
     NbDatepickerModule,
     NbSelectModule,
     NbIconModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    FilePickerModule
   ]
 })
-export class ProductModule { }
+export class SchoolsModule { }
